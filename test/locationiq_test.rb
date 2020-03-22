@@ -15,9 +15,7 @@ describe "get_location" do
   it "will raise an exception if the search fails" do
     VCR.use_cassette("location_find") do
       location = ""
-      expect {
-        response = get_location(location)
-      }.must_raise SearchError
+      expect { response = get_location(location) }.must_raise SearchError
     end
   end
 end
